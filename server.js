@@ -9,7 +9,6 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8010;
 
-
 /*
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
@@ -19,8 +18,6 @@ const PORT = process.env.PORT || 8010;
 */
 
 mongoose.connect(global.conection, { // esta definida en la de routes.js de la carpeta express
-  useNewUrlParser: true,
-  useUnifiedTopology: true
 }).then(() => {
   console.log('Conectado a MongoDB');
 }).catch(err => {
@@ -477,4 +474,3 @@ app.post("/signoVital", async (req, res) => {
     return "fallo"
   }
 })
-
