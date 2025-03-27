@@ -1,5 +1,5 @@
 // Initialize express router
-global.conection = "mongodb+srv://solutionhit128:Capibara124@cluster0.yddko.mongodb.net/dbVitalBand";
+//global.conection = "mongodb+srv://solutionhit128:Capibara124@cluster0.yddko.mongodb.net/dbVitalBand";
 
 //ip de la maquina
 //global.route = "http://localhost:8010";
@@ -14,5 +14,5 @@ global.conection = "mongodb+srv://solutionhit128:Capibara124@cluster0.yddko.mong
 //Red Jalisco
 //global.route = "http://10.1.2.165:8010"
 // --> De Localhost
-global.route = "http://localhost:8010";
+//global.route = "http://localhost:8010";
 

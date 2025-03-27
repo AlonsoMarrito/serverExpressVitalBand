@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 require('./routes'); 
 
-dotenv.config();
+dotenv.config();  // Cargar las variables de entorno desde el archivo .env
 
 const app = express();
 const PORT = process.env.PORT || 8010;
@@ -17,7 +17,9 @@ const PORT = process.env.PORT || 8010;
 --------------------------------------------------------------------------------------------
 */
 
-mongoose.connect(global.conection, { // esta definida en la de routes.js de la carpeta express
+mongoose.connect(process.env.MONGO_URI, { 
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 }).then(() => {
   console.log('Conectado a MongoDB');
 }).catch(err => {
@@ -89,8 +91,10 @@ app.get("/", (req, res) => {
   res.send("API funcionando correctamente 🚀");
 });
 
+global.route = process.env.SERVER_ROUTE || `http://localhost:${PORT}`;
+
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://${global.route}`);
+  console.log(`Servidor corriendo en ${global.route}`);
 });
 
 
